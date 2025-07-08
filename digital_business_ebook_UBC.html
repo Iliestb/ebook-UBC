@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Business Digital - Jeunes Entrepreneurs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%, #f093fb 100%);
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+        }
+
+        .page:last-child {
+            page-break-after: avoid;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 36px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border-left: 5px solid #ffffff;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .stats-box h3 {
+            color: white;
+        }
+
+        .stats-box p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .action-steps {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .action-steps h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .action-steps ol {
+            padding-left: 20px;
+        }
+
+        .action-steps li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffffff;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff9ff3 100%);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            border: 3px solid #f39c12;
+            box-shadow: 0 6px 20px rgba(253, 203, 110, 0.3);
+        }
+
+        .cta-section p {
+            color: #2d3436;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .testimonial::after {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border: 3px solid #f39c12;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(253, 203, 110, 0.3);
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: "⚠️";
+            font-size: 30px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #f39c12;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-box h3 {
+            color: #2d3436;
+            margin-left: 40px;
+        }
+
+        .warning-box p {
+            color: #2d3436;
+        }
+
+        .intro-subtitle {
+            font-size: 20px;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1 - INTRODUCTION -->
+    <div class="page">
+        <div class="content-wrapper">
+            <div class="header">
+                <h1>🚀 GUIDE BUSINESS DIGITAL</h1>
+                <p class="intro-subtitle">De 0€ à 3000€/mois sans compétences techniques</p>
+            </div>
+
+            <div class="highlight">
+                <h2>Pourquoi ce guide est différent ?</h2>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 0;">
+                    Parce qu'il ne te promet pas de devenir millionnaire en 24h, mais te donne un plan RÉEL pour générer tes premiers revenus digitaux en 30 jours maximum.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0; background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); padding: 30px; border-radius: 20px; color: white; box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3);">
+                <h3>🎯 Pour qui ?</h3>
+                <p style="font-size: 18px;">
+                    • Jeunes de 16 à 25 ans frustrés par leur situation actuelle<br>
+                    • Étudiants qui veulent gagner plus qu'avec un job étudiant<br>
+                    • Personnes motivées mais qui ne savent pas par où commencer<br>
+                    • Ceux qui ont déjà essayé mais sans méthode claire
+                </p>
+            </div>
+
+            <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%); border-radius: 20px; box-shadow: 0 8px 25px rgba(253, 121, 168, 0.3);">
+                <h3 style="color: #2d3436; font-size: 24px;">💡 La vérité</h3>
+                <p style="font-size: 20px; color: #2d3436; font-weight: bold;">
+                    "Pendant que tu cherches encore LA bonne idée, d'autres appliquent déjà une méthode qui fonctionne."
+                </p>
+            </div>
+        </div>
+        <div class="page-number">1/7</div>
+    </div>
+
+    <!-- PAGE 2 - LE PROBLÈME -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>⚠️ LA RÉALITÉ QUE TU VIS</h2>
+
+            <div class="stats-box">
+                <h3>📊 Les chiffres qui font mal</h3>
+                <p><strong>• Salaire moyen 18-25 ans :</strong> 1 200€/mois</p>
+                <p><strong>• Temps de travail :</strong> 35h/semaine minimum</p>
+                <p><strong>• Évolution de salaire :</strong> +50€/mois par an en moyenne</p>
+                <p><strong>• Liberté géographique :</strong> 0% (tu dois être présent)</p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>🔍 Ce que tu ressens probablement :</h3>
+                <p style="font-size: 18px;">
+                    <strong>Le matin :</strong> "Encore une journée qui se ressemble..."<br>
+                    <strong>Le soir :</strong> "J'ai travaillé 8h pour gagner 40€ nets"<br>
+                    <strong>Le weekend :</strong> "Je n'ai pas assez d'argent pour mes projets"<br>
+                    <strong>Face à l'avenir :</strong> "À ce rythme, je vais galérer pendant des années"
+                </p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⏰ Le piège du temps</h3>
+                <p>Avec un job classique, tu échanges ton temps contre de l'argent. Pas de temps = pas d'argent. Tu es littéralement prisonnier de cette équation.</p>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <p style="font-size: 22px; color: #e74c3c; font-weight: bold;">
+                    "Si tu ne changes rien, dans 5 ans tu auras exactement la même vie... en pire."
+                </p>
+            </div>
+        </div>
+        <div class="page-number">2/7</div>
+    </div>
+
+    <!-- PAGE 3 - L'ALTERNATIVE DIGITALE -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>💎 L'ALTERNATIVE DIGITALE</h2>
+
+            <div class="highlight">
+                <h3>🌟 Le potentiel du business digital</h3>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 0;">
+                    Contrairement au travail classique, le digital te permet de générer des revenus 24h/24, même quand tu dors. Une vente peut rapporter 100€, 300€ ou plus... en quelques clics.
+                </p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>🎯 L'avantage de revendre un produit déjà prêt</h3>
+                <p>Créer un produit = des mois de travail, des risques, des tests...</p>
+                <p><strong>Revendre un produit qui marche déjà = résultats immédiats.</strong></p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%); color: white; padding: 30px; border-radius: 20px; margin: 20px 0; box-shadow: 0 8px 25px rgba(0, 206, 201, 0.3);">
+                <h3 style="color: #ecf0f1;">🔥 Focus sur la formation UBC</h3>
+                <p style="font-size: 18px; text-align: center;">
+                    <strong>Il ne s'agit pas de créer un produit.</strong><br><br>
+                    Tu peux directement revendre une formation de qualité, déjà testée par plus de 50 000 personnes.<br><br>
+                    ✅ Tu gagnes du temps<br>
+                    ✅ Tu gagnes en crédibilité<br>
+                    ✅ Tu gagnes de l'argent<br><br>
+                    <strong>À chaque vente, tu touches 100%.</strong>
+                </p>
+            </div>
+
+            <div class="cta-section">
+                <p style="font-size: 18px; color: #2c3e50; margin-bottom: 20px;">
+                    <strong>Tu peux continuer à chercher sur YouTube... ou cliquer ci-dessous et débloquer le vrai plan.</strong>
+                </p>
+                <a href="https://shop.beacons.ai/worker.digit/17b5c483-54ca-49b8-9b56-1579cb2c5a22?t=1751981567080" class="cta-button">
+                    🔓 Accéder maintenant à la méthode complète
+                </a>
+            </div>
+        </div>
+        <div class="page-number">3/7</div>
+    </div>
+
+    <!-- PAGE 4 - PLAN D'ACTION -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>📋 PLAN D'ACTION SIMPLIFIÉ</h2>
+
+            <div class="action-steps">
+                <h3>🎯 5 étapes pour démarrer (et gagner)</h3>
+                <ol>
+                    <li><strong>Obtenir un produit à revendre</strong><br>
+                        → Accède à la formation UBC et obtiens ton lien d'affiliation</li>
+                    
+                    <li><strong>Mettre en place ta page</strong><br>
+                        → Crée ta page Beacon avec ton lien personnalisé</li>
+                    
+                    <li><strong>Publier du contenu simple</strong><br>
+                        → Reels faceless, témoignages, avant/après, tips business</li>
+                    
+                    <li><strong>Collecter les contacts</strong><br>
+                        → Récupère emails et commentaires des intéressés</li>
+                    
+                    <li><strong>Convertir = Gains</strong><br>
+                        → Dès la première vente, tu récupères ton investissement</li>
+                </ol>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); color: white; padding: 25px; border-radius: 20px; margin: 20px 0; box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);">
+                <h3 style="color: white; text-align: center;">⚡ Exemple concret</h3>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 0;">
+                    <strong>Semaine 1 :</strong> Tu postes 3 vidéos sur TikTok<br>
+                    <strong>Semaine 2 :</strong> 50 personnes voient ton contenu<br>
+                    <strong>Semaine 3 :</strong> 5 personnes t'écrivent en privé<br>
+                    <strong>Semaine 4 :</strong> 1 personne achète = 297€ dans ta poche
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="font-size: 20px; color: #2c3e50; font-weight: bold;">
+                    "Le plus dur n'est pas de réussir, c'est de commencer."
+                </p>
+            </div>
+        </div>
+        <div class="page-number">4/7</div>
+    </div>
+
+    <!-- PAGE 5 - ERREURS À ÉVITER -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>⚠️ LES 3 ERREURS QUI TUENT</h2>
+
+            <div class="warning-box">
+                <h3>🌀 Erreur #1 : Se disperser</h3>
+                <p><strong>Ce que tu fais :</strong> Tu essaies 10 business en même temps</p>
+                <p><strong>Résultat :</strong> Tu n'excelles dans aucun</p>
+                <p><strong>Solution :</strong> Focus sur UN seul produit, UNE méthode, pendant 90 jours minimum</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>📚 Erreur #2 : Pas de méthode</h3>
+                <p><strong>Ce que tu fais :</strong> Tu regardes des tutos YouTube au hasard</p>
+                <p><strong>Résultat :</strong> Tu tournes en rond sans plan précis</p>
+                <p><strong>Solution :</strong> Suis une méthode complète, étape par étape</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⏳ Erreur #3 : Pas d'action rapide</h3>
+                <p><strong>Ce que tu fais :</strong> Tu te prépares pendant des mois</p>
+                <p><strong>Résultat :</strong> Tu ne lances jamais rien</p>
+                <p><strong>Solution :</strong> Lance-toi dans les 48h, même imparfaitement</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fd79a8 0%, #ff7675 100%); color: white; padding: 30px; border-radius: 20px; margin: 30px 0; box-shadow: 0 8px 25px rgba(253, 121, 168, 0.3);">
+                <h3 style="color: white; text-align: center;">💡 La vérité sur l'échec</h3>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 0;">
+                    95% des gens échouent NOT parce qu'ils n'ont pas les compétences, mais parce qu'ils n'ont pas de méthode claire et ne passent jamais à l'action.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="font-size: 22px; color: #2c3e50; font-weight: bold;">
+                    "Mieux vaut une action imparfaite qu'une préparation parfaite."
+                </p>
+            </div>
+        </div>
+        <div class="page-number">5/7</div>
+    </div>
+
+    <!-- PAGE 6 - TÉMOIGNAGE -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>🎯 HISTOIRE INSPIRANTE</h2>
+
+            <div class="testimonial">
+                <h3 style="color: white; text-align: center; margin-bottom: 20px;">📈 Témoignage - Lucas, 21 ans</h3>
+                <p style="font-size: 18px; text-align: center;">
+                    <em>"J'étais serveur dans un fast-food à 9€/h. J'en avais marre de voir mes potes partir en vacances pendant que je comptais mes sous.</em>
+                </p>
+                <p style="font-size: 18px; text-align: center;">
+                    <em>J'ai découvert cette méthode un dimanche soir. Le mardi, j'avais ma page Beacon prête. Le vendredi, j'avais posté mes 3 premières vidéos.</em>
+                </p>
+                <p style="font-size: 18px; text-align: center;">
+                    <em>2 semaines plus tard : première vente de 297€. J'ai gagné en 1 clic ce que je gagnais en 33h de travail au McDo.</em>
+                </p>
+                <p style="font-size: 18px; text-align: center;">
+                    <em>Aujourd'hui, 4 mois après, je fais 2 800€/mois en moyenne. J'ai pu arrêter le fast-food et me concentrer sur mes études."</em>
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fdcb6e 0%, #fd79a8 100%); color: white; padding: 30px; border-radius: 20px; margin: 30px 0; box-shadow: 0 8px 25px rgba(253, 203, 110, 0.3);">
+                <h3 style="color: white; text-align: center;">🔥 Résultat première semaine</h3>
+                <p style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 0;">
+                    3 400€ de CA en 7 jours
+                </p>
+                <p style="text-align: center; font-size: 16px; margin-bottom: 0;">
+                    (Avec seulement 4h de travail par jour)
+                </p>
+            </div>
+
+            <div class="cta-section">
+                <p style="font-size: 18px; color: #2c3e50; margin-bottom: 20px;">
+                    <strong>Lucas n'avait aucune compétence technique. Sa seule différence ? Il a appliqué la méthode complète.</strong>
+                </p>
+                <a href="https://shop.beacons.ai/worker.digit/17b5c483-54ca-49b8-9b56-1579cb2c5a22?t=1751981567080" class="cta-button">
+                    🚀 Je veux la même méthode
+                </a>
+            </div>
+        </div>
+        <div class="page-number">6/7</div>
+    </div>
+
+    <!-- PAGE 7 - CONCLUSION -->
+    <div class="page">
+        <div class="content-wrapper">
+            <h2>🎯 LE MOMENT DE VÉRITÉ</h2>
+
+            <div style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%); color: white; padding: 30px; border-radius: 20px; margin: 20px 0; box-shadow: 0 8px 25px rgba(45, 52, 54, 0.4);">
+                <h3 style="color: white; text-align: center;">⚡ Deux choix s'offrent à toi</h3>
+                <p style="text-align: center; font-size: 18px;">
+                    <strong>CHOIX 1 :</strong> Tu continues comme avant<br>
+                    → Même salaire, même routine, même frustration<br>
+                    → Dans 1 an, tu auras les mêmes problèmes... en pire
+                </p>
+                <p style="text-align: center; font-size: 18px; margin-top: 20px;">
+                    <strong>CHOIX 2 :</strong> Tu prends cette méthode et tu agis<br>
+                    → Premiers résultats en 30 jours<br>
+                    → Dans 1 an, tu vis la vie que tu mérites
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <h3 style="color: #e74c3c; font-size: 24px;">🔥 La formation UBC</h3>
+                <p style="font-size: 18px;">
+                    <strong>✅ Méthode complète étape par étape</strong><br>
+                    ✅ Plus de 50 000 personnes l'ont utilisée<br>
+                    ✅ Support et communauté inclus<br>
+                    ✅ Mise à jour régulière<br>
+                    ✅ Garantie résultats
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); color: white; padding: 30px; border-radius: 20px; margin: 20px 0; box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);">
+                <p style="text-align: center; font-size: 22px; font-weight: bold; margin-bottom: 0;">
+                    "La différence entre ceux qui réussissent et les autres ? Les premiers passent à l'action MAINTENANT."
+                </p>
+            </div>
+
+            <div class="cta-section" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%); color: white; border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.3); box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);">
+                <p style="font-size: 20px; margin-bottom: 20px; color: white;">
+                    <strong>Stop à la procrastination. Start à ta réussite.</strong>
+                </p>
+                <a href="https://shop.beacons.ai/worker.digit/17b5c483-54ca-49b8-9b56-1579cb2c5a22?t=1751981567080" class="cta-button" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #6c5ce7; font-size: 20px; padding: 20px 40px; border: 3px solid #6c5ce7; box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);">
+                    🚀 JE DÉMARRE MAINTENANT
+                </a>
+            </div>
+        </div>
+        <div class="page-number">7/7</div>
+    </div>
+
+    <script>
+        // Rendre les boutons cliquables
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.href, '_blank');
+            });
+        });
+
+        // Fonction pour imprimer en PDF
+        function printToPDF() {
+            window.print();
+        }
+
+        // Ajouter un bouton d'impression (optionnel)
+        document.addEventListener('DOMContentLoaded', function() {
+            const printButton = document.createElement('button');
+            printButton.textContent = 'Générer PDF';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000;
+            `;
+            printButton.onclick = printToPDF;
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>
